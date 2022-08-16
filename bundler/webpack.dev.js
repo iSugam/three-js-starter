@@ -11,9 +11,8 @@ module.exports = merge(common, {
         path: path.resolve(__dirname, "../dist")
     },
     devServer : {
-        port: 3000,
-        open: true,
+        port: 3000, // Port Number
+        open: true, // Open browser automatically
+        hot: true // Auto Reload
     }
 });
-
-console.log(path);

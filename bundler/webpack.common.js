@@ -18,11 +18,21 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.html$/i,
+                use: ["html-loader"]
+            },
+            {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"]
-            }
+                use: ["style-loader", "css-loader"] // For CSS
+            },
+            {
+                test: /\.(svg|png|jpg|jpeg|gif)$/i, // For IMAGES
+                type: "asset/resource"
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i, // For FONTS
+                type: 'asset/resource',
+            },
         ]
     }
 }
-
-console.log(path);
