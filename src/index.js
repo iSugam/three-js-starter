@@ -1,11 +1,13 @@
 import "./style.css";
-import texture from "./assets/textures/2k_earth_daymap.jpg"
+import texture from "./assets/textures/2k_earth_daymap_depth_map.jpg"
+import alphaTexture from "./assets/textures/2k_earth_daymap_1_depth.png"
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 // Add webgl Renderer
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
 
 // Add renderer to the body
 document.body.appendChild(renderer.domElement);
@@ -21,7 +23,7 @@ window.addEventListener("resize", () => {
 // Add Scene and camera
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0,0.1, 5) // x, y, and z positions
+camera.position.set(0,0.1, 3) // x, y, and z positions
 
 // Create earth geometry and add the texture material to it and combine it with THREE.Mesh
 const earthGeometry = new THREE.SphereGeometry( 1, 100, 100 );
