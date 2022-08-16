@@ -1,6 +1,5 @@
 import "./style.css";
-import texture from "./assets/textures/2k_earth_daymap_depth_map.jpg"
-import alphaTexture from "./assets/textures/2k_earth_daymap_1_depth.png"
+import texture from "./assets/textures/2k_earth_daymap.jpg"
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
