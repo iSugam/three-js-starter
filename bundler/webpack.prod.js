@@ -13,7 +13,7 @@ module.exports = merge(common, {
     output: {
         filename: "script.[contenthash].js",
         path: path.resolve(__dirname, "../dist"), // Build in directory
-        assetModuleFilename:"asset/textures/[name].[hash][ext]",
+        assetModuleFilename:"asset/[name].[hash][ext]",
         clean: true // To not to build a new js or css file every time we run (npm run build)
     },
     module: {
