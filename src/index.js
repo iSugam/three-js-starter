@@ -11,18 +11,17 @@ renderer.setPixelRatio(window.devicePixelRatio);
 // Add renderer to the body
 document.body.appendChild(renderer.domElement);
 
+// Add Scene and camera
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0,0.1, 3) // x, y, and z positions
+
 // Resize the rendering and camera as per window's width and height
 window.addEventListener("resize", () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix()
 });
-
-
-// Add Scene and camera
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0,0.1, 3) // x, y, and z positions
 
 // Create earth geometry and add the texture material to it and combine it with THREE.Mesh
 const earthGeometry = new THREE.SphereGeometry( 1, 100, 100 );
